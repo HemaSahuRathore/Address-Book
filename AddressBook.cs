@@ -22,6 +22,20 @@ namespace Address_Book
             this.addressBook.Add(contact); //Adding object to addressBook List
         }
 
+        //Method to contact Multiple Contact
+        public void AddMultipleContact()
+        {
+            Console.Write("\nPlease enter total number of contact you want to add : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < num; i++)
+            {
+                Contact contact = new Contact();
+                this.addressBook.Add(contact);
+            }
+
+        }
+
         //Method to edit contact based on name
         public void EditContact()
         {
@@ -86,7 +100,7 @@ namespace Address_Book
         {
             for (int i = 0; i < addressBook.Count; i++)
             {
-                Console.WriteLine("Contact {0}", i);
+                Console.WriteLine("Contact {0}", i+1);
                 Console.WriteLine(addressBook[i]);
             }
         }

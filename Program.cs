@@ -1,6 +1,6 @@
 ﻿namespace Address_Book
 {  /// <summary>
-   /// UC4 : Ability to delete existing contact person using their name
+   /// UC5 : Ability to add multiple contact
    /// </summary>
     public class Program
     {   
@@ -21,7 +21,8 @@
                 Console.WriteLine("2. Display Existing contact");
                 Console.WriteLine("3. Edit Existing contact");
                 Console.WriteLine("4. Delete Existing contact");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Add Multiple contact");
+                Console.WriteLine("6. Exit");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 //Loop to continue until user wants to exit
@@ -40,11 +41,14 @@
                         addressBookObj.DeleteContact();
                         break;
                     case 5:
+                        addressBookObj.AddMultipleContact();
+                        break;
+                    case 6:
                         break;
 
                  } 
 
-            } while (option != 5); //continue till user wants to add contact
+            } while (option != 6); //continue till user wants to add contact
         }
     }
 }
