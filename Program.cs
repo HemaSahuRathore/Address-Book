@@ -1,6 +1,6 @@
 ﻿namespace Address_Book
 {  /// <summary>
-   /// UC3 : Ability to edit existing contact person using their name
+   /// UC4 : Ability to delete existing contact person using their name
    /// </summary>
     public class Program
     {   
