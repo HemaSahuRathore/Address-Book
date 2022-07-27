@@ -39,6 +39,11 @@ namespace Address_Book
             this.email = Console.ReadLine();
         }
 
+        //overriding ToString method of Object class to diplay the objects
+        public override string ToString() 
+        {
+            return "\nFirst Name : " + this.firstName + "\nLast Name : " + this.lastName + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip Code: " + this.zipCode + "\nPhone Number: " + this.phoneNumber + "\nEmail: " + this.email;
+        }
     }
 }
 
