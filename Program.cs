@@ -1,6 +1,6 @@
 ﻿namespace Address_Book
 {  /// <summary>
-   /// UC1 : Ability to create Contact in Address Book
+   /// UC2 : Ability to add Contact in Address Book
    /// </summary>
     public class Program
     {   
