@@ -20,7 +20,8 @@
                 Console.WriteLine("1. Add new contact");
                 Console.WriteLine("2. Display Existing contact");
                 Console.WriteLine("3. Edit Existing contact");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Delete Existing contact");
+                Console.WriteLine("5. Exit");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 //Loop to continue until user wants to exit
@@ -36,11 +37,14 @@
                         addressBookObj.EditContact();
                         break;
                     case 4:
+                        addressBookObj.DeleteContact();
+                        break;
+                    case 5:
                         break;
 
                  } 
 
-            } while (option != 4); //continue till user wants to add contact
+            } while (option != 5); //continue till user wants to add contact
         }
     }
 }

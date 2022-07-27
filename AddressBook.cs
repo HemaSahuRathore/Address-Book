@@ -51,14 +51,47 @@ namespace Address_Book
             }
         }
 
+        //method to delete contact based on name
+        public void DeleteContact()
+        {
+            int foundContact = 0; //flag to check if contact found
+
+            if (addressBook.Count == 0)  //if no contact found(empty list-Address Book)
+                Console.WriteLine("No Contact Added!!!!!! Address Book is Empty.");
+            else
+            {
+                Console.Write("Enter the Contact First Name : ");
+                string newFirstName = Console.ReadLine();
+                Console.Write("Enter the Contact First Name : ");
+                string newLastName = Console.ReadLine();
+
+                for (int i = 0; i < addressBook.Count; i++)
+                {
+                    if (addressBook[i].firstName == newFirstName && addressBook[i].lastName == newLastName)
+                    {
+                        Console.WriteLine("Deleting: " + addressBook[i].firstName + " " + addressBook[i].lastName + " Contact details...");
+                        addressBook.Remove(addressBook[i]);
+                        foundContact = 1; //changing flag value as contact found and deleted
+                    }
+
+                }
+                if (foundContact == 0) //contact not found
+                    Console.WriteLine("Contact Information you entered not found. Please check added contacts and then try again!!!!");
+            }
+
+        }
+
         //Method to display existing contact
         public void DisplayContact()
         {
             for (int i = 0; i < addressBook.Count; i++)
             {
+                Console.WriteLine("Contact {0}", i);
                 Console.WriteLine(addressBook[i]);
             }
         }
+
+
     }
 }
 
