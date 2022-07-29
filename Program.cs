@@ -1,15 +1,16 @@
 ﻿namespace Address_Book
 {  /// <summary>
-   /// UC5 : Ability to add multiple contact
+   /// UC6 : Ability to add Multiple Address Book
    /// </summary>
     public class Program
-    {   
+    {
         //An Entrypoint of console App
         static void Main(string[] args)
         {
             int option;
 
-            AddressBook addressBookObj = new AddressBook(); //Creating AddressBook Object
+            AddressBookList addressBookListObj = new AddressBookList();
+
 
             Console.WriteLine("Welcome to Address Book Program"); //Welcome Message
 
@@ -17,38 +18,30 @@
             do
             {
                 Console.WriteLine("\nEnter from the below options:");
-                Console.WriteLine("1. Add new contact");
-                Console.WriteLine("2. Display Existing contact");
-                Console.WriteLine("3. Edit Existing contact");
-                Console.WriteLine("4. Delete Existing contact");
-                Console.WriteLine("5. Add Multiple contact");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("1. Add Address Book");
+                Console.WriteLine("2. Display Existing Address Book");
+                Console.WriteLine("3. Add Contact to Address Book");
+                Console.WriteLine("4. Exit");
+                ;
                 option = Convert.ToInt32(Console.ReadLine());
 
                 //Loop to continue until user wants to exit
                 switch (option)
                 {
                     case 1:
-                        addressBookObj.AddContact();
+                        addressBookListObj.AddAddressBook();
                         break;
                     case 2:
-                        addressBookObj.DisplayContact();
+                        addressBookListObj.DisplayAddressBookList();
                         break;
                     case 3:
-                        addressBookObj.EditContact();
+                        addressBookListObj.SelectAddressBookToAddContact();
                         break;
                     case 4:
-                        addressBookObj.DeleteContact();
                         break;
-                    case 5:
-                        addressBookObj.AddMultipleContact();
-                        break;
-                    case 6:
-                        break;
+                }
 
-                 } 
-
-            } while (option != 6); //continue till user wants to add contact
+            } while (option != 8); //continue till user wants to add contact
         }
     }
 }

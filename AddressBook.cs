@@ -100,12 +100,55 @@ namespace Address_Book
         {
             for (int i = 0; i < addressBook.Count; i++)
             {
-                Console.WriteLine("Contact {0}", i+1);
+                Console.WriteLine("Contact {0}", i + 1);
                 Console.WriteLine(addressBook[i]);
             }
         }
 
+        public void contactMenu()
+        {
+            int option;
+            do
+            {
+                Console.WriteLine("\nEnter from the below options:");
+                Console.WriteLine("1. Add new contact");
+                Console.WriteLine("2. Display Existing contact");
+                Console.WriteLine("3. Edit Existing contact");
+                Console.WriteLine("4. Delete Existing contact");
+                Console.WriteLine("5. Add Multiple contact");
+                Console.WriteLine("6. Exit");
 
+                option = Convert.ToInt32(Console.ReadLine());
+
+                //Loop to continue until user wants to exit
+                switch (option)
+                {
+                    case 1:
+                        AddContact();
+                        break;
+                    case 2:
+                        DisplayContact();
+                        break;
+                    case 3:
+                        EditContact();
+                        break;
+                    case 4:
+                        DeleteContact();
+                        break;
+                    case 5:
+                        AddMultipleContact();
+                        break;
+                    case 6:
+                        break;
+                }
+
+            } while (option != 6);
+
+        }
+
+        public override string ToString() //overriding ToString method of Object class to diplay the objects
+        {
+            return "No Of Contacts : " + addressBook.Count;
+        }
     }
 }
-
